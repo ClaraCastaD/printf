@@ -4,19 +4,23 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 
 /**
-*sttruct types_arguments - Struct op
-*
-* @t: The operator
-* @f: The function associated
-*/
+  * struct types_arguments - Struct op
+  * @t: The operator
+  * @f: The function associated
+  **/
 typedef struct types_arguments
 {
-	char t;
-	void (*f)(va_list va);
-} types;t _printf(const char *format, ...);
-void print_all(const char * const format, ...);
+		char *t;
+			int (*f)(va_list va);
+} types_es;
+
 int _putchar(char c);
+int _printf(const char *format, ...);
+int (*print_all(const char *a, int b))(va_list);
+int t_string(va_list va);
+int t_char(va_list va);
 
 #endif /* HOLBERTON_H */

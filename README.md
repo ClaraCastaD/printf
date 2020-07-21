@@ -31,11 +31,30 @@ The task **0x11.C-printf** consist in write our own **printf** function, meeting
 **There should be one project repository per group. If you clone/fork/whatever a project repository with the same name before the second deadline, you risk a 0% score.**
 
 ## Installation:
-add installation
-## How to compie it:
-add it
+
+To install the program, the following considerations must be taken in mind:
+
++ In the folder where it is required to use, all files ending in **.c** must be present.
++ The file with the extension **.h** must be also be present.
++ Before using the program, it is recommended that each file be reviewed, **all of them are properly commented**.
++ For the correct operation of the program, all the files must be inside the folder in which it will be used.
+
+## How to compile it:
+
+To compile the program, the recommended way is typing **gcc -Wall -Werror -Wextra -pedantic *.c** in the folder of your project or you can add all the **.c** files one by one, also adding the printf program files ending in **.c**.
+
+If you need information about the flags of **gcc** you can click this:
+
+- [man 1 gcc](https://linux.die.net/man/1/gcc)
+
+
 ## How to use it:
-add. 
+
+To use the program we give you the function **printf**, the syntax is **_printf([ARGUMENT])**. To make it clearer we leave an example on github to see how it works:
+
++ [example.c](https://github.com/poix-code/test/blob/master/example.c)
+
+**Note:** to execute, remember use the proposed command above.
 
 ![Holberton logo](https://camo.githubusercontent.com/80e4aef5357b80f03b960818a751e2be258ccc97/68747470733a2f2f7777772e686f6c626572746f6e7363686f6f6c2e636f6d2f686f6c626572746f6e2d6c6f676f2e706e67)
 

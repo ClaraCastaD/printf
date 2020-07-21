@@ -41,7 +41,7 @@ To install the program, the following considerations must be taken in mind:
 
 ## How to compile it:
 
-To compile the program, the recommended way is typing **gcc -Wall -Werror -Wextra -pedantic *.c** in the folder of your project or you can add all the **.c** files one by one, also adding the printf program files ending in **.c**.
+To compile the program, the recommended way is typing **gcc -Wall -Werror -Wextra -pedantic** **\*.c** in the folder of your project or you can add all the **.c** files one by one, also adding the printf program files ending in **.c**.
 
 If you need information about the flags of **gcc** you can click this:
 

@@ -22,5 +22,6 @@ int _printf(const char *format, ...);
 int (*print_all(const char *a, int b))(va_list);
 int t_string(va_list va);
 int t_char(va_list va);
+int t_integer(va_list num);
 
 #endif /* HOLBERTON_H */

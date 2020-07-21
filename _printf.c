@@ -40,28 +40,3 @@ int _printf(const char *format, ...)
 	va_end(valist);
 	return (d);
 }
-
-/**
- * print_all - prints anything
- *@a: add description
- *@b: add desxcription
- * Return: no return
- */
-
-int (*print_all(const char *a, int b))(va_list)
-{
-	types_es difftypes[] = {
-		{"s", t_string},
-		{"c", t_char},
-		{NULL, NULL}};
-	int e;
-
-	for (e = 0; difftypes[e].t != NULL; e++)
-	{
-		if (difftypes[e].t[0] == a[b])
-		{
-			return (difftypes[e].f);
-		}
-	}
-	return (NULL);
-}

@@ -9,6 +9,8 @@
 
 int (*print_all(const char *a, int b))(va_list)
 {
+	int e;
+
 	types_es difftypes[] = {
 		{"s", t_string},
 		{"c", t_char},
@@ -16,8 +18,6 @@ int (*print_all(const char *a, int b))(va_list)
 		{"i", t_integer},
 		{NULL, NULL}
 	};
-	int e;
-
 	for (e = 0; difftypes[e].t != NULL; e++)
 	{
 		if (difftypes[e].t[0] == a[b])

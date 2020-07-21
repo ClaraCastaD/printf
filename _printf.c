@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
- *_printf.c - Function that produces output according to a format.
- *format: Character string
- *Return: success
+ * _printf - Function that produces output according to a format.
+ * @format: Character string
+ * Return: success
  */
 int _printf(const char *format, ...)
 {
@@ -14,103 +14,54 @@ int _printf(const char *format, ...)
 		return (-1);
 
 	va_start(valist, format);
-
 	for (c = 0; format[c] != '\0'; c++)
 	{
 		if (format[c] == '%')
 		{
-			if (format[c + 1]  == '%')
-			{
-				_putchar ('%');
-				d++; 
+			if (format[c + 1] == '%')
+			{	_putchar('%');
+				d++;
 				c++;
 			}
 			else if (print_all(format, c + 1) != NULL)
-			{
-				d = d + (print_all(format, c + 1)(valist);
+			{	d = d + (print_all(format, c + 1))(valist);
 				c++;
 			}
 			else
-			{
-				_putchar(format[c]);
+			{	_putchar(format[c]);
 				d++;
 			}
+		}
+		else
+		{	_putchar(format[c]);
+			d++;
 		}
 	}
 	va_end(valist);
 	return (d);
-
 }
 
 /**
-* print_all - prints anything
-*@format: format
-*
-* Return: no return
-*/
+ * print_all - prints anything
+ *@a: add description
+ *@b: add desxcription
+ * Return: no return
+ */
 
-void print_all(const char * const format, ...)
-{	
-	int i, j, count;
-	va_list valist;
-	types difftypes[] = {
-		{'c', t_char},
-		{'s', t_string},
-	};
-	char *s = "";
+int (*print_all(const char *a, int b))(va_list)
+{
+	types_es difftypes[] = {
+		{"s", t_string},
+		{"c", t_char},
+		{NULL, NULL}};
+	int e;
 
-	i = 0;
-	count = 0;
-	va_start(valist, format);
-	while (format != NULL && format[i])
+	for (e = 0; difftypes[e].t != NULL; e++)
 	{
-		j = 0;
-		while (j < 4)
+		if (difftypes[e].t[0] == a[b])
 		{
-			if (format[i] == difftypes[j].t)
-			{
-				printf("%s", s);
-				difftypes[j].f(valist);
-				s = ", ";
-				count++;
-				break;
-			}
-			j++;
-
+			return (difftypes[e].f);
 		}
-		i++;
 	}
-	printf("\n");
-}
-
-/**
- * t_char - print a character
- *@va:character
- *
- * Return: no return
- */
-void t_char(va_list c)
-{
-	int c;
-
-	c = va_arg(va, int);
-	printf("%c", c);
-}
-
-/**
- * t_string - print a string
- *@va: pointer to string
- *
- * Return: no return
- */
-void t_string(va_list s)
-{
-	char *s = va_arg(va, char *);
-
-	if (s == NULL)
-	{
-		printf("(nil)");
-		return;
-	}
-	printf("%s", s);
+	return (NULL);
 }
